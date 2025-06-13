@@ -9,23 +9,24 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-        int n, s; cin >> n >> s;
-        priority_queue<int, vector<int>, greater<int>> pq;
-        while (n--)
+        ll n, s; cin >> n >> s;
+        vector<ll> a(n);
+        for (auto &x : a) cin >> x;
+
+        ll l = 0, r = 0, sum = 0;
+
+        ll ans = 0;
+        while (r < n)
         {
-            int x; cin >> x;
-            pq.push(x);
+            sum += a[r];
+            if (sum <= s)
+                ans = max(ans, r - l + 1);
+            else
+                sum -= a[l], l++;
+            r++;
         }
 
-        int cnt = 0;
-        int sum = 0;
-        while (!pq.empty())
-        {
-            sum += pq.top(); pq.pop();
-            if (sum >= s) break;
-            cnt++;
-        }
-        cout << cnt << nl;
+        cout << ans << nl;
 
     return 0;
 }
