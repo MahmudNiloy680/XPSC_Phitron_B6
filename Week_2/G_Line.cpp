@@ -1,15 +1,22 @@
+// Problem Link: https://codeforces.com/problemset/problem/1722/D
+// Author: Mahmud Niloy
+// Created: 30-06-2025
+
 #include <bits/stdc++.h>
 using namespace std;
+
 #define ll long long
+#define nl '\n'
+#define tt(x) ll x; cin >> x; while (x--)
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
 
-int main()
+
+void solve()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t;
-    cin >> t;
-    while (t--)
+    tt(t)
     {
         int n;  cin >> n;
         string s;   cin >> s;
@@ -40,6 +47,16 @@ int main()
         }
         cout << endl;
     }
+    
+    return;
+}
 
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    solve();
+    
     return 0;
 }
