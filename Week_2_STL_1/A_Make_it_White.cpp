@@ -1,14 +1,22 @@
+// Problem Link: https://codeforces.com/problemset/problem/1927/A
+// Author: Mahmud Niloy
+// Created: 01-07-2025
+
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
+#define ll long long
+#define nl '\n'
+#define tt(x) ll x; cin >> x; while (x--)
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+
+
+void solve()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    
-    int t;
-    cin >> t;
-    while (t--)
+    tt(t)
     {
         int n; string s;
         cin >> n >> s;
@@ -23,6 +31,16 @@ int main()
         int firstpos = s.find('B'), lastpos = s.rfind('B');
         cout << lastpos - firstpos + 1 << endl;
     }
+    
+    return;
+}
 
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    solve();
+    
     return 0;
 }
