@@ -1,19 +1,27 @@
+// Problem Link: https://codeforces.com/problemset/problem/1468/C
+// Author: Mahmud Niloy
+// Created: 12-07-2025
+
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
+#define ll long long
+#define nl '\n'
+#define tt(x) ll x; cin >> x; while (x--)
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define yes cout << "YES\n"
+#define no cout << "NO\n"
+
+
+void solve()
 {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    int t; cin >> t;
     int c = 1;
-
     set<pair<int, int>> s;
     multiset<pair<int, int>> ml;
     vector<int> ans;
 
-    while (t--)
+    tt(t)
     {
         int q; cin >> q;
         if (q == 1)
@@ -42,6 +50,16 @@ int main()
 
     for (auto i : ans)
         cout << i << " ";
+    
+    return;
+}
 
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    solve();
+    
     return 0;
 }

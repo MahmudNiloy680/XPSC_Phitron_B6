@@ -1,4 +1,4 @@
-// Problem Link: https://codeforces.com/problemset/problem/1430/C
+// Problem Link: https://codeforces.com/problemset/problem/1800/C2
 // Author: Mahmud Niloy
 // Created: 12-07-2025
 
@@ -18,17 +18,23 @@ void solve()
 {
     tt(t)
     {
-        vector<pair<int, int>> v;
-        int n; cin >> n;
-        cout << 2 << endl;
+        ll n; cin >> n;
+        vector<ll> a(n);
+        for (auto &x : a) cin >> x;
 
-        int tmp = (n + n)/2;
-
-        for (int i = n; i > 1; i--)
+        priority_queue<ll> pq;
+        ll my_army = 0;
+        for (ll i = 0; i < n; i++)
         {
-            cout << tmp << " " << i - 1 << endl;
-            tmp = (tmp + i)/2;
+            if (a[i] == 0 && !pq.empty())
+            {
+                my_army += pq.top();
+                pq.pop();
+            }
+            else pq.push(a[i]);
         }
+
+        cout << my_army << nl;
     }
     
     return;
